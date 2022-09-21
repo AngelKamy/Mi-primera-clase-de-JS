@@ -1,0 +1,152 @@
+
+[Sección A]------------------------------------------------------------
+Clonar repositorio y crear mi rama local y remota <username>
+nota: la rama <username> podría ser cualquier nombre.
+	Este proceso solo se hace una vez.
+-----------------------------------------------------------------------
+1.- Clonar el repositorio CHX
+	git clone git@github.com:sergiotrrs/chX.git
+2.- Entrar a carpeta ch14, por default se posicionará en rama main
+	cd chX
+3.- Crear rama a partir de main
+	git branch <username>
+4.- Verificar ramas locales con último commit
+	git branch -v
+	*la nueva rama tendrá el último commit al igual que main
+5.- Posicionarse en rama <username>
+	git checkout <username>
+6.- Subir rama <username> a GitHub
+	git push origin <username>
+7.- Baia, baia, solo son 6 pasos ¬¬
+
+[Sección B]------------------------------------------------------------
+Conocer mi lista de repositorios (noma's, pa' saber que significa origin)
+-----------------------------------------------------------------------
+1.- Muestra lista repositorios
+	git remote -v
+2.- Muestra las ramas remotas
+	git remote show origin
+3.- Git comienza a ser agradable =P
+
+[Sección C]------------------------------------------------------------
+Hacer desarrollos en mi rama
+-----------------------------------------------------------------------
+1.- Verificar en que rama local se está trabajando
+	git branch -v
+	* la rama en curso estará marcanda con un asterisco
+2.- Si se está posicionado en rama <username> ir a paso 4
+3.- Posicionarse en rama <username>
+	git checkout <username>
+4.- Pasar un huevo a nuestra computadora para las malas vibras
+	Desarrollar html, css, javascript, etc.
+5.- Mostrar el estado actual del repositorio con lista de archivos
+        nuevos, eliminados o modificados
+	git status
+6.- Agregar archivos nuevos, eliminados o modificados
+	git add nombreArchivo
+	git add .
+	*Con el . estaremos agregando todos los archivos
+7.- Hacer commit a los archivos añadidos, eliminados o modificados
+	git commit -m "verbo: comentario concreto de hasta 50 letras"
+8.- Regresar a paso 4. Si ya se hicieron varios cambios ir a paso 9
+    (ya no es necesario el huevo si se utilizó de guajolote)
+9.- Subir los cambios locales de rama <username> al repositorio en GitHub
+	git push origin <username>
+10.- ¿Cómo pude vivir sin git todo este tiempo?
+
+[Sección D]------------------------------------------------------------
+Para que mi rama esté actualizada con main
+-----------------------------------------------------------------------
+1.- Posicionarse en rama <username>
+	git checkout <username>
+2.- Verifica cambios en el repositorio GitHub con el local
+	git fetch origin main
+3.- Busca los cambios nuevos y actualiza el repositorio main
+	git pull origin main
+4.- Al estar posicionado en rama <username> y hacer pull en origin
+	la rama hará el merge a la rama <username>, por lo que
+	se desplegará nano o vim con el mensaje del merge
+	solo se tiene que cerrar nano ctrl+x o vim :q
+5.- Hacer push en los cambios que obtuvo la rama <username>
+	git push origin <username>
+6.- Dinero, dinero, dinero, háblame dinero
+
+[Sección E]------------------------------------------------------------
+Para que main tenga mis cambios y mis comprensivos instructores lo revisen
+-----------------------------------------------------------------------
+1.- Posicionarse en rama origin
+	git checkout main
+2.- Verifica cambios en el repositorio GitHub con el local
+	git fetch origin main
+3.- Busca los cambios nuevos y actualizar el repositorio main
+	git pull origin main
+4.- Hacer merge con la rama <username>
+	git merge <username>
+5.- Hacer push en los cambios que obtuvo la rama main
+	git push origin main
+6.- Ser felices =]
+
+[Sección F]------------------------------------------------------------
+Volver a clonar el repositorio, descargar main y mi rama <username> existente
+Nota: Este proceso solo se hace una vez.
+-----------------------------------------------------------------------
+1.- Clonar el repositorio CHX
+	git clone git@github.com:sergiotrrs/gen_chX.git
+2.- Entrar a carpeta gen_chX
+	cd gen_chX
+3.- Ver ramas remotas y locales con último commit 
+	git branch -a -v
+	*para salir del listado pulsar después de :q
+4.- Descargar rama remota a local
+	git branch <username(local)> origin/<username>
+5.- Verificar ramas locales con último commit
+	git branch -v
+6.- Posicionarse en rama <username>
+	git checkout <username>
+7.- Trabajar en la rama y ser más felices =]
+
+
+[Sección G]------------------------------------------------------------
+Cambiar el editor predeterminado a nano
+-----------------------------------------------------------------------
+1.- Verificar el editor predeterminado en la configuración, campo core.editor
+	git config -l
+2.- Cambiar el editor predetermiando a nano
+	git config --global core.editor nano
+3.- Los comandos de nano, ej. ^X se activará con las teclas ctrl + x
+
+4.- ¿Qué toalla podría secarse en menos tiempo?
+
+[Sección H]------------------------------------------------------------
+Conocer la configuración de GIT
+-----------------------------------------------------------------------
+	git config --list
+
+[Sección I]------------------------------------------------------------
+Conocer el histórico de commits
+-----------------------------------------------------------------------
+	git log
+Conocer el histórico de commits en una sola línea
+	git log --oneline
+Conocer un número limitado de commits, ejemplo 3
+	git log -3
+Conocer el histórico con ramas integradas
+	git log --graph --oneline
+
+[Sección J]------------------------------------------------------------
+Ver los cambios en un commit
+-----------------------------------------------------------------------
+	git show <n.hash>
+	*Número hash: id único del commit
+[Sección k]------------------------------------------------------------
+Ir a un commit anterior
+-----------------------------------------------------------------------
+	git checkout <n.hash>
+
+[Sección L]------------------------------------------------------------
+Otros comandos
+-----------------------------------------------------------------------
+Muestra los archivos ignorados por Git (están indicados en .gitignore)
+	git status --ignored
+
+Wake up, Neo...
